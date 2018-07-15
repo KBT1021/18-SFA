@@ -9,28 +9,36 @@ public class InputManager : MonoBehaviour
     InputField inputField;
 
     //inputText:入力されたテキスト，pointTarget:点のPrefabs，lineTarget：直線のPrefabs
-    public GameObject pointTarget;
-    public GameObject lineTarget;
+    GameObject pointTarget;
+    GameObject lineTarget;
     Text inputText;
-    Button pointButton;
+    GameObject pointButton;
+    GameObject lineButton;
+    GameObject cubeCutButton;
     Button enterButton;
-    //whichActiveButton:どのボタンがアクティブか。0: no, 1:point, 2: line
-    private int whichActiveButton = 0;
+    //whichActiveButton:どのボタンがアクティブか。0: no, 1:point, 2: line, 3: cubecut
+    public static int whichActiveButton = 0;
     //pointTarge：後で点の色とか編集したくなりそう：これは後で実装
 
     // Use this for initialization
     void Start()
     {
-        inputField = GetComponent<InputField>();
+        inputField = GameObject.Find("Canvas/InputField").GetComponent<InputField>();
         InitInputField();
+        pointTarget = Resources.Load("Prefabs/PointPrefabs", typeof(GameObject)) as GameObject;
+        lineTarget = Resources.Load("Prefabs/PointPrefabs", typeof(GameObject)) as GameObject;
         inputText = GameObject.Find("Canvas/InputField/Text").GetComponent<Text>();
-        pointButton = GameObject.Find("Canvas/PointButton").GetComponent<Button>();
+        pointButton = GameObject.Find("Canvas/ModeSelectButtons/PointButton");
+        lineButton = GameObject.Find("Canvas/ModeSelButtons/LineButton");
+        cubeCutButton = GameObject.Find("Canvas/ModeSelButtons/CubeCutButton");
         enterButton = GameObject.Find("Canvas/EnterButton").GetComponent<Button>();
+
     }
 
     //ActivateButton():1~Nのボタンを選択した時，そのボタンだけ色を変えて，
-    //それ以外のボタンは色を戻す。whichActiveButtonの番号も変える。
+    //それ以外のボタンは色を戻す。whichActiveButtonの番号も変える。text内のコメントも変える。
     public void ActivateButton(){
+        
         
     }
 
@@ -38,13 +46,13 @@ public class InputManager : MonoBehaviour
     //whichActiveButtonによって処理を変える。
     public void InputSaver()
     {
-        //入力をStringとしてtext.textに出力
+        //入力をStringとしてinputText.textに出力
         string inputString = inputField.text;
         inputString = inputField.text;
         inputText.text = inputString;
 
         //3D点の表示
-        if (Is3DPoint(inputText.text))
+        if (Is3DPoint(inputText.text) && whichActiveButton == 1)
         {
             long posX, posY, posZ;
             string[] strPos = new string[3];
@@ -82,8 +90,8 @@ public class InputManager : MonoBehaviour
     bool Is3DPoint(string text)
     {
         bool result;
-        //空白も許容したい,()と+xも許容するべし。
-        result = Regex.IsMatch(text, "-?[0-9]+,-?[0-9]+,-?[0-9]+" );
+        //空白も許容したい。\sがなぜか入らないのでよくわからない。部分一致で検索しているから，完全一致に変更せよ。
+        result = Regex.IsMatch(text, "(-?[0-9]+,-?[0-9]+,-?[0-9]+)" );
         return result;
     }
 

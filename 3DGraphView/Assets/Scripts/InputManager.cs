@@ -8,8 +8,14 @@ public class InputManager : MonoBehaviour
 {
     InputField inputField;
 
-    public Text text;
+    //inputText:入力されたテキスト，pointTarget:点のPrefabs，lineTarget：直線のPrefabs
     public GameObject pointTarget;
+    public GameObject lineTarget;
+    Text inputText;
+    Button pointButton;
+    Button enterButton;
+    //whichActiveButton:どのボタンがアクティブか。0: no, 1:point, 2: line
+    private int whichActiveButton = 0;
     //pointTarge：後で点の色とか編集したくなりそう：これは後で実装
 
     // Use this for initialization
@@ -17,26 +23,34 @@ public class InputManager : MonoBehaviour
     {
         inputField = GetComponent<InputField>();
         InitInputField();
+        inputText = GameObject.Find("Canvas/InputField/Text").GetComponent<Text>();
+        pointButton = GameObject.Find("Canvas/PointButton").GetComponent<Button>();
+        enterButton = GameObject.Find("Canvas/EnterButton").GetComponent<Button>();
     }
 
+    //ActivateButton():1~Nのボタンを選択した時，そのボタンだけ色を変えて，
+    //それ以外のボタンは色を戻す。whichActiveButtonの番号も変える。
+    public void ActivateButton(){
+        
+    }
+
+    //InputSaver():EnterKeyを押した時に入力されたテキストの処理を行う。
+    //whichActiveButtonによって処理を変える。
     public void InputSaver()
     {
         //入力をStringとしてtext.textに出力
         string inputString = inputField.text;
         inputString = inputField.text;
-        text.text = inputString;
-
-
-        //出力が点(a,b,c)なら点を出力，直線の式(y = a*x + b)なら直線を出力
+        inputText.text = inputString;
 
         //3D点の表示
-        if (Is3DPoint(text.text))
+        if (Is3DPoint(inputText.text))
         {
             long posX, posY, posZ;
             string[] strPos = new string[3];
             long[] longPos = new long[3];
             //fx, fy, fzの取得
-            MatchCollection tempText = Regex.Matches(text.text, "-?[0-9]+");
+            MatchCollection tempText = Regex.Matches(inputText.text, "-?[0-9]+");
             for (int i = 0; i < 3; i++){
                 strPos[i] = tempText[i].Groups[0].Value;
                 longPos[i] = long.Parse(strPos[i]);
@@ -50,14 +64,14 @@ public class InputManager : MonoBehaviour
             }
         }
         //直線の表示
-        if (IsLine())
+       /* if (IsLine(text.text))
         {
 
-        }
+        }*/
         InitInputField();
     }
 
-
+    //入力画面の初期化:何か出力が出た時だけにしよう。
     void InitInputField()
     {
         inputField.text = "";
@@ -74,8 +88,10 @@ public class InputManager : MonoBehaviour
     }
 
     //IsLine():直線の式を示すかの判定，
-    bool IsLine()
+   /* bool Is3DLine(string text)
     {
-        return false;
-    }
+        bool result;
+        result = Regex.IsMatch(text, " ")
+        return result;
+    }*/
 }

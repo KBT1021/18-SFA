@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{28E06CCD-8E66-41A7-B227-5AB1F9CE597C}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InputManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ActivateButton.cs">
     <Files>
-      <File FileName="Assets/Scripts/InputManager.cs" Line="17" Column="9" />
-      <File FileName="Assets/Scripts/ActivateButton.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/InputManager.cs" Line="41" Column="9" />
+      <File FileName="Assets/Scripts/ActivateButton.cs" Line="38" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

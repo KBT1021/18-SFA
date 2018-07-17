@@ -32,15 +32,11 @@ public class InputManager : MonoBehaviour
         lineButton = GameObject.Find("Canvas/ModeSelButtons/LineButton");
         cubeCutButton = GameObject.Find("Canvas/ModeSelButtons/CubeCutButton");
         enterButton = GameObject.Find("Canvas/EnterButton").GetComponent<Button>();
-
+        //LineRenderer renderer = GameObject.Find("Canvas/LineRenderer").GetComponent<LineRenderer>();
     }
 
-    //ActivateButton():1~Nのボタンを選択した時，そのボタンだけ色を変えて，
-    //それ以外のボタンは色を戻す。whichActiveButtonの番号も変える。text内のコメントも変える。
-    public void ActivateButton(){
-        
-        
-    }
+    //ActivateButton():それ以外のボタンは色を戻す。whichActiveButtonの番号も変える。
+
 
     //InputSaver():EnterKeyを押した時に入力されたテキストの処理を行う。
     //whichActiveButtonによって処理を変える。
@@ -59,23 +55,42 @@ public class InputManager : MonoBehaviour
             long[] longPos = new long[3];
             //fx, fy, fzの取得
             MatchCollection tempText = Regex.Matches(inputText.text, "-?[0-9]+");
-            for (int i = 0; i < 3; i++){
+            for (int i = 0; i < 3; i++)
+            {
                 strPos[i] = tempText[i].Groups[0].Value;
                 longPos[i] = long.Parse(strPos[i]);
             }
-            posX = longPos[0];posY = longPos[1];posZ = longPos[2];
+            posX = longPos[0]; posY = longPos[1]; posZ = longPos[2];
 
             //posx, posy, poszをもとに表示
             Instantiate(pointTarget, new Vector3(posX, posY, posZ), Quaternion.identity);
-            foreach(Match c  in tempText){
+            foreach (Match c in tempText)
+            {
                 Debug.Log(c.Value);
             }
         }
         //直線の表示
-       /* if (IsLine(text.text))
+        if (Is3DLine(inputText.text) && whichActiveButton == 2)
         {
+            string[] strPos = new string[6];
+            long[] longPos = new long[6];
+            long[] pos1 = new long[3], pos2 = new long[3];
+            //fx, fy, fzの取得
+            MatchCollection tempText = Regex.Matches(inputText.text, "-?[0-9]+");
+            for (int i = 0; i < 6; i++)
+            {
+                strPos[i] = tempText[i].Groups[0].Value;
+                longPos[i] = long.Parse(strPos[i]);
+            }
+            pos1[0] = longPos[0]; pos1[1] = longPos[1]; pos1[2] = longPos[2];
+            pos2[0] = longPos[3]; pos2[1] = longPos[4]; pos2[2] = longPos[5];
 
-        }*/
+            /*//直線の描画，LineRendererを使う
+            renderer.SetWidth(0, 3);
+            renderer.positionCount = 2;
+            renderer.SetPosition(0, new Vector3(pos1[0], pos1[1], pos1[2]));
+            renderer.SetPosition(1, new Vector3(pos2[0], pos2[1], pos2[2]));*/
+        }
         InitInputField();
     }
 
@@ -91,15 +106,15 @@ public class InputManager : MonoBehaviour
     {
         bool result;
         //空白も許容したい。\sがなぜか入らないのでよくわからない。部分一致で検索しているから，完全一致に変更せよ。
-        result = Regex.IsMatch(text, "(-?[0-9]+,-?[0-9]+,-?[0-9]+)" );
+        result = Regex.IsMatch(text, "(-?[0-9]+,-?[0-9]+,-?[0-9]+)");
         return result;
     }
 
     //IsLine():直線の式を示すかの判定，
-   /* bool Is3DLine(string text)
+    bool Is3DLine(string text)
     {
         bool result;
-        result = Regex.IsMatch(text, " ")
+        result = Regex.IsMatch(text, "(-?[0-9]+,-?[0-9]+,-?[0-9]+),(-?[0-9]+,-?[0-9]+,-?[0-9]+)");
         return result;
-    }*/
+    }
 }

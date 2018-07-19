@@ -11,6 +11,8 @@ public class InputManager : MonoBehaviour
     //inputText:入力されたテキスト，pointTarget:点のPrefabs，lineTarget：直線のPrefabs
     GameObject pointTarget;
     GameObject lineTarget;
+    GameObject rendererTarget;
+    Material lineMaterial;
     Text inputText;
     GameObject pointButton;
     GameObject lineButton;
@@ -27,13 +29,15 @@ public class InputManager : MonoBehaviour
         InitInputField();
         pointTarget = Resources.Load("Prefabs/PointPrefabs", typeof(GameObject)) as GameObject;
         lineTarget = Resources.Load("Prefabs/PointPrefabs", typeof(GameObject)) as GameObject;
+        rendererTarget = Resources.Load("Prefabs/LineRendererPrefabs", typeof(GameObject)) as GameObject;
+        lineMaterial = Resources.Load("Materials/LineMaterial", typeof(Material)) as Material;
         inputText = GameObject.Find("Canvas/InputField/Text").GetComponent<Text>();
         pointButton = GameObject.Find("Canvas/ModeSelectButtons/PointButton");
         lineButton = GameObject.Find("Canvas/ModeSelButtons/LineButton");
         cubeCutButton = GameObject.Find("Canvas/ModeSelButtons/CubeCutButton");
         enterButton = GameObject.Find("Canvas/EnterButton").GetComponent<Button>();
-        //LineRenderer renderer = GameObject.Find("Canvas/LineRenderer").GetComponent<LineRenderer>();
     }
+
 
     //ActivateButton():それ以外のボタンは色を戻す。whichActiveButtonの番号も変える。
 
@@ -84,12 +88,14 @@ public class InputManager : MonoBehaviour
             }
             pos1[0] = longPos[0]; pos1[1] = longPos[1]; pos1[2] = longPos[2];
             pos2[0] = longPos[3]; pos2[1] = longPos[4]; pos2[2] = longPos[5];
-
-            /*//直線の描画，LineRendererを使う
-            renderer.SetWidth(0, 3);
-            renderer.positionCount = 2;
+            //LineRendererを用い描画
+            GameObject rendObj = Instantiate(rendererTarget) as GameObject;
+            LineRenderer renderer = rendObj.GetComponent<LineRenderer>();
+            renderer.SetWidth(0.1f, 0.1f);
+            renderer.SetVertexCount(2);
             renderer.SetPosition(0, new Vector3(pos1[0], pos1[1], pos1[2]));
-            renderer.SetPosition(1, new Vector3(pos2[0], pos2[1], pos2[2]));*/
+            renderer.SetPosition(1, new Vector3(pos2[0], pos2[1], pos2[2]));
+
         }
         InitInputField();
     }
@@ -106,7 +112,7 @@ public class InputManager : MonoBehaviour
     {
         bool result;
         //空白も許容したい。\sがなぜか入らないのでよくわからない。部分一致で検索しているから，完全一致に変更せよ。
-        result = Regex.IsMatch(text, "(-?[0-9]+,-?[0-9]+,-?[0-9]+)");
+        result = Regex.IsMatch(text, Regex.Escape("(")+"-?[0-9]+,-?[0-9]+,-?[0-9]+"+Regex.Escape(")"));
         return result;
     }
 
@@ -114,7 +120,7 @@ public class InputManager : MonoBehaviour
     bool Is3DLine(string text)
     {
         bool result;
-        result = Regex.IsMatch(text, "(-?[0-9]+,-?[0-9]+,-?[0-9]+),(-?[0-9]+,-?[0-9]+,-?[0-9]+)");
+        result = Regex.IsMatch(text, Regex.Escape("(")+"-?[0-9]+,-?[0-9]+,-?[0-9]+"+Regex.Escape("),(")+"-?[0-9]+,-?[0-9]+,-?[0-9]+"+Regex.Escape(")"));
         return result;
     }
 }

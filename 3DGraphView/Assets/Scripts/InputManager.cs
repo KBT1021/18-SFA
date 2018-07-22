@@ -45,6 +45,8 @@ public class InputManager : MonoBehaviour
     //whichActiveButtonによって処理を変える。
     public void InputSaver()
     {
+        //とりあえずグラフのやつはEnterのたびに消去。
+        functionGenerator.ObjDestroy();  
         //入力をStringとしてinputText.textに出力
         string inputString = inputField.text;
         inputString = inputField.text;

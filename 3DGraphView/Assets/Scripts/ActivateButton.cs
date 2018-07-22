@@ -21,20 +21,20 @@ public class ActivateButton : MonoBehaviour {
         if (thisButton.name == "PointButton") 
         { 
             InputManager.whichActiveButton = 1;
-            placeHolder.GetComponent<Text>().text = "点の座標を入力：例　(1,2,3)";
-            thisButton.image.color = Color.gray;
+            placeHolder.GetComponent<Text>().text = "Input Point Posision : (1,2,3)";
+           // thisButton.image.color = Color.gray;
         }
         else if (thisButton.name == "LineButton") 
         {
             InputManager.whichActiveButton = 2; 
-            placeHolder.GetComponent<Text>().text = "直線が通る2点の座標を入力：例　(1,2,3), (4,5,6)";
-            thisButton.image.color = Color.gray;
+            placeHolder.GetComponent<Text>().text = "Input Line Position : (1,2,3), (4,5,6)";
+            //thisButton.image.color = Color.gray;
         }
         else if (thisButton.name == "CubeCutButton") 
         { 
             InputManager.whichActiveButton = 3;
-            placeHolder.GetComponent<Text>().text = "立体切断アニメーション";
-            thisButton.image.color = Color.gray;
+            placeHolder.GetComponent<Text>().text = "Draw some graph : Enter the number 0 - 4";
+            //thisButton.image.color = Color.gray;
         }
     }
 

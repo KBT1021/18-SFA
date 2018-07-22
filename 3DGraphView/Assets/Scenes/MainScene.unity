@@ -472,30 +472,30 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4846031709401276, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4846031709401276, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4846031709401276, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 20345179365665548, guid: eb05520bf76d8fd4a9fc33c33138f288,
         type: 2}
       propertyPath: far clip plane
-      value: 3.732051
+      value: 18.660255
       objectReference: {fileID: 0}
     - target: {fileID: 20317464398012136, guid: eb05520bf76d8fd4a9fc33c33138f288,
         type: 2}
       propertyPath: far clip plane
-      value: 3.732051
+      value: 18.660255
       objectReference: {fileID: 0}
     - target: {fileID: 20377649845570556, guid: eb05520bf76d8fd4a9fc33c33138f288,
         type: 2}
       propertyPath: far clip plane
-      value: 3.732051
+      value: 18.660255
       objectReference: {fileID: 0}
     - target: {fileID: 20253638522951632, guid: eb05520bf76d8fd4a9fc33c33138f288,
         type: 2}
@@ -536,6 +536,16 @@ Prefab:
         type: 2}
       propertyPath: m_NormalizedViewPortRect.width
       value: 0.26646796
+      objectReference: {fileID: 0}
+    - target: {fileID: 20253638522951632, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: far clip plane
+      value: 18.660255
+      objectReference: {fileID: 0}
+    - target: {fileID: 114016859905927160, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: hologramArea
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}

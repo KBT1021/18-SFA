@@ -44,6 +44,13 @@ public class InputManager : MonoBehaviour
     }
 
 
+    //Keyboardの表示・非表示
+    public void LateUpdate()
+    {
+        if (inputField.isFocused) { inputField.touchScreenKeyboard.active = true; }
+        else inputField.touchScreenKeyboard.active = false;
+    }
+
     //InputSaver():EnterKeyを押した時に入力されたテキストの処理を行う。
     //whichActiveButtonによって処理を変える。
     public void InputSaver()

@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{F9101FA0-3E2E-BA67-5FF5-57C4734ECEF2}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/test.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FunctionGenerator.cs">
     <Files>
-      <File FileName="Assets/Scripts/test.cs" Line="5" Column="17" />
+      <File FileName="Assets/Scripts/FunctionGenerator.cs" Line="8" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

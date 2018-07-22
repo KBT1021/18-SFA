@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 4022581783257168}
   - component: {fileID: 114813423477037676}
   m_Layer: 0
-  m_Name: Hologram Area
+  m_Name: Hologram Area Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

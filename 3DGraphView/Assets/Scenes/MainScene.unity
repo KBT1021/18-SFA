@@ -390,37 +390,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1370374910053280, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4846031709401276, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4846031709401276, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4846031709401276, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 20345179365665548, guid: eb05520bf76d8fd4a9fc33c33138f288,
-        type: 2}
-      propertyPath: far clip plane
-      value: 3.732051
-      objectReference: {fileID: 0}
-    - target: {fileID: 20317464398012136, guid: eb05520bf76d8fd4a9fc33c33138f288,
-        type: 2}
-      propertyPath: far clip plane
-      value: 3.732051
-      objectReference: {fileID: 0}
-    - target: {fileID: 20377649845570556, guid: eb05520bf76d8fd4a9fc33c33138f288,
-        type: 2}
-      propertyPath: far clip plane
-      value: 3.732051
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}
   m_IsPrefabAsset: 0
@@ -1696,22 +1665,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1569924151}
   m_CullTransparentMesh: 0
---- !u!1 &1576593408 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1928813088051874, guid: eb05520bf76d8fd4a9fc33c33138f288,
-    type: 2}
-  m_PrefabInternal: {fileID: 192223635}
---- !u!114 &1576593410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1576593408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e725a7c20a8c2d24eb6ed9fcd3f36cc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1606790760
 GameObject:
   m_ObjectHideFlags: 0

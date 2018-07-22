@@ -10,7 +10,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1989827979307372}
-  m_IsPrefabAsset: 1
+  m_IsPrefabAsset: 0
 --- !u!1 &1124459249127900
 GameObject:
   m_ObjectHideFlags: 1
@@ -496,9 +496,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.124999985
+    x: 0.16691506
     y: 0.3
-    width: 0.3
+    width: 0.26646796
     height: 0.4
   near clip plane: 0.5
   far clip plane: 3.732051
@@ -536,9 +536,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.575
+    x: 0.566617
     y: 0.3
-    width: 0.3
+    width: 0.26646796
     height: 0.4
   near clip plane: 0.5
   far clip plane: 3.732051
@@ -576,9 +576,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.35
+    x: 0.36676604
     y: 0.6
-    width: 0.3
+    width: 0.26646796
     height: 0.4
   near clip plane: 0.5
   far clip plane: 3.732051
@@ -616,9 +616,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.35
+    x: 0.36676604
     y: -0.000000007450581
-    width: 0.3
+    width: 0.26646796
     height: 0.4
   near clip plane: 0.5
   far clip plane: 3.732051

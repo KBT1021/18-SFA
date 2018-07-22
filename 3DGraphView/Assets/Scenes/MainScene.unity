@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -420,6 +420,46 @@ Prefab:
         type: 2}
       propertyPath: far clip plane
       value: 3.732051
+      objectReference: {fileID: 0}
+    - target: {fileID: 20253638522951632, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.566617
+      objectReference: {fileID: 0}
+    - target: {fileID: 20253638522951632, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.26646796
+      objectReference: {fileID: 0}
+    - target: {fileID: 20377649845570556, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.16691506
+      objectReference: {fileID: 0}
+    - target: {fileID: 20377649845570556, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.26646796
+      objectReference: {fileID: 0}
+    - target: {fileID: 20317464398012136, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.36676604
+      objectReference: {fileID: 0}
+    - target: {fileID: 20317464398012136, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.26646796
+      objectReference: {fileID: 0}
+    - target: {fileID: 20345179365665548, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.36676604
+      objectReference: {fileID: 0}
+    - target: {fileID: 20345179365665548, guid: eb05520bf76d8fd4a9fc33c33138f288,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.26646796
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb05520bf76d8fd4a9fc33c33138f288, type: 2}

@@ -9,7 +9,7 @@ public class FunctionGenerator : MonoBehaviour {
     int xDiv = 200, zDiv = 200;
     float xini = -20f, xfin = 20f, zini = -20f, zfin = 20f;
     //methodで読み込む関数を変える。
-    int method = 3;
+    public int method = 3;
 
     float Math0 (float x, float z){
         float y = -(x * x + z * z)/(float)10.0;
@@ -37,7 +37,8 @@ public class FunctionGenerator : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start () {
+	public void Generate() {
+        Debug.Log("Success");
         GameObject particle = Resources.Load("Prefabs/ParticlePrefabs", typeof(GameObject)) as GameObject; 
         float dx = (xfin - xini) / (float)xDiv, dz = (zfin - zini) / (float)zDiv;
         float x = xini;

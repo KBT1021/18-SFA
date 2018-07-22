@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5DE6\u4E0A\u306E\u30DC\u30BF\u30F3\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
+  m_Text: Click the Upper-Left Button!
 --- !u!222 &100836311
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -277,6 +277,7 @@ RectTransform:
   - {fileID: 1559858967}
   - {fileID: 237958235}
   - {fileID: 1105655655}
+  - {fileID: 476525781}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -607,7 +608,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -618,7 +619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u76F4\u7DDA"
+  m_Text: Line
 --- !u!222 &246516989
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -703,6 +704,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &476525780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476525781}
+  - component: {fileID: 476525782}
+  m_Layer: 0
+  m_Name: FunctionGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476525781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 476525780}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -399.91803, y: -265.60678, z: -0.19029461}
+  m_LocalScale: {x: 1.1922504, y: 1.1922504, z: 1.1922504}
+  m_Children: []
+  m_Father: {fileID: 112969744}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476525782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 476525780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3b75eb6b667439e81f454f34c512a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: 3
 --- !u!1 &725098680
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +830,6 @@ GameObject:
   - component: {fileID: 754238508}
   - component: {fileID: 754238511}
   - component: {fileID: 754238510}
-  - component: {fileID: 754238509}
   m_Layer: 0
   m_Name: xAxis
   m_TagString: Untagged
@@ -804,23 +845,11 @@ Transform:
   m_GameObject: {fileID: 754238507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 100, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 970951687}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &754238509
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 754238507}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &754238510
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -873,7 +902,6 @@ GameObject:
   - component: {fileID: 834872120}
   - component: {fileID: 834872123}
   - component: {fileID: 834872122}
-  - component: {fileID: 834872121}
   m_Layer: 0
   m_Name: yAxis
   m_TagString: Untagged
@@ -889,23 +917,11 @@ Transform:
   m_GameObject: {fileID: 834872119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 20, z: 0.05}
+  m_LocalScale: {x: 0.1, y: 100, z: 0.1}
   m_Children: []
   m_Father: {fileID: 970951687}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &834872121
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 834872119}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &834872122
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1943,7 +1959,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1954,7 +1970,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7ACB\u4F53\u5207\u65AD"
+  m_Text: Graph
 --- !u!222 &1628178704
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2182,7 +2198,6 @@ GameObject:
   - component: {fileID: 1960940594}
   - component: {fileID: 1960940597}
   - component: {fileID: 1960940596}
-  - component: {fileID: 1960940595}
   m_Layer: 0
   m_Name: zAxis
   m_TagString: Untagged
@@ -2198,23 +2213,11 @@ Transform:
   m_GameObject: {fileID: 1960940593}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 20}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 100}
   m_Children: []
   m_Father: {fileID: 970951687}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1960940595
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1960940593}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1960940596
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2313,7 +2316,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2324,7 +2327,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u70B9"
+  m_Text: Point
 --- !u!222 &2072421015
 CanvasRenderer:
   m_ObjectHideFlags: 0

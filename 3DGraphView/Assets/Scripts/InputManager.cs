@@ -18,6 +18,7 @@ public class InputManager : MonoBehaviour
     GameObject lineButton;
     GameObject cubeCutButton;
     Button enterButton;
+    FunctionGenerator functionGenerator;
     //whichActiveButton:どのボタンがアクティブか。0: no, 1:point, 2: line, 3: cubecut
     public static int whichActiveButton = 0;
     //pointTarge：後で点の色とか編集したくなりそう：これは後で実装
@@ -36,10 +37,8 @@ public class InputManager : MonoBehaviour
         lineButton = GameObject.Find("Canvas/ModeSelButtons/LineButton");
         cubeCutButton = GameObject.Find("Canvas/ModeSelButtons/CubeCutButton");
         enterButton = GameObject.Find("Canvas/EnterButton").GetComponent<Button>();
+        functionGenerator =  GameObject.Find("Canvas/FunctionGenerator").GetComponent<FunctionGenerator>();
     }
-
-
-    //ActivateButton():それ以外のボタンは色を戻す。whichActiveButtonの番号も変える。
 
 
     //InputSaver():EnterKeyを押した時に入力されたテキストの処理を行う。
@@ -97,6 +96,18 @@ public class InputManager : MonoBehaviour
             renderer.SetPosition(1, new Vector3(pos2[0], pos2[1], pos2[2]));
 
         }
+
+        if (IsNumber04(inputText.text) && whichActiveButton == 3)
+        {
+            string strNum;
+            int intNum;
+            //入れられた数字の取得
+            MatchCollection tempText = Regex.Matches(inputText.text, "[0-4]");
+            strNum = tempText[0].Groups[0].Value;
+            intNum = int.Parse(strNum);
+            functionGenerator.method = intNum;
+            functionGenerator.Generate();                  
+        }
         InitInputField();
     }
 
@@ -121,6 +132,12 @@ public class InputManager : MonoBehaviour
     {
         bool result;
         result = Regex.IsMatch(text, Regex.Escape("(")+"-?[0-9]+,-?[0-9]+,-?[0-9]+"+Regex.Escape("),(")+"-?[0-9]+,-?[0-9]+,-?[0-9]+"+Regex.Escape(")"));
+        return result;
+    }
+    bool IsNumber04(string text)
+    {
+        bool result;
+        result = Regex.IsMatch(text, "[0-4]");
         return result;
     }
 }
